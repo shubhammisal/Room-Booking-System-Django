@@ -1,0 +1,22 @@
+{% extends "booking/base.html" %}
+{% block title %} Summary of the Data{% endblock %}
+{% block content %}
+{% csrf_token %}
+<table class="table">
+    <thead>
+      <tr>
+       <th>Summary of the Database</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr><td>Total Number of Customers Entry :</td><td>{{data.trecord}}</td></tr>
+        <tr><td>Total Number of Booking :</td><td>{{data.tbooking}}</td></tr> 
+        <tr><td>Total Number of Payment Entry :</td><td>{{data.tpay}}</td></tr> 
+        <tr><td>Total Payment received Current Month :</td><td>{{data.tpayment}}</td></tr>
+        <tr><td>Total Payment received Last Month :</td><td>{{data.lastpay}}</td></tr>
+        <tr><td>Average Payment :</td><td>{{data.avgpay}}</td></tr>
+    </tbody>
+  </table>
+  <br>
+  <a href="home" class="btn btn-info btn-block my-4" role="button" >Back</a>
+  {% endblock %}

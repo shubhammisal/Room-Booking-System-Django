@@ -1,0 +1,21 @@
+{% extends "booking/base.html" %}
+{% block title %}Payment{% endblock %}
+{% block content %}
+<div class="container">
+    <form class="text-center border border-light p-6" method="POST">
+        <h2>Enter Payment Data</h2>
+        {% csrf_token %}
+        {% for field in form  %}
+    <div class="form-outline">
+        <label class="form-label">{{ field.label_tag }}</label>
+        <div> {{ field }}</div>
+        {% endfor %}
+        <br>
+        <button type="submit" class="btn btn-info btn-block my-4" >Submit</button>
+        <br>
+        <a href="home" class="btn btn-info btn-block my-4" role="button" >Back</a>
+      </div>
+    </form>
+   
+    </div>
+{% endblock %}

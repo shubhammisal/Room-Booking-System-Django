@@ -1,0 +1,34 @@
+{% extends "booking/base.html" %}
+{% block title %} Display All Payment Data{% endblock %}
+{% block content %}
+<form method="POST">
+  {% csrf_token %}
+  <div class="input-group">
+    <input type="text" class="form-control" placeholder="Search Paymnet Data By Customer Name" name="search">
+    <div class="input-group-btn">
+      <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+    </div>
+  </div>
+</form>
+<table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Customer Name</th>
+        <th scope="col">Payment Type</th>
+        <th scope="col">Amount </th>
+        <th scope="col">Payment Date</th>
+    </thead>
+    <tbody>
+        {% for c in cus %}
+      <tr class="table-active">
+        <th scope="row">{{c.name}}</th>
+        <td>{{c.Payment_Type}}</td>
+        <td>{{c.amount}}</td>
+        <td>{{c.Payment_date}}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  <br>
+  <a href="home" class="btn btn-info btn-block my-4" role="button" >Back</a>
+  {% endblock %}

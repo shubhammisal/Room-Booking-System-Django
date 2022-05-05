@@ -1,0 +1,47 @@
+{% extends "booking/base.html" %}
+{% block title %}Home{% endblock %}
+{% block style %}
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static 'booking/style.css' %}">
+{% endblock %}
+{% block content %}
+<div class="view intro-2">
+    <div class="full-bg-img">
+      <div class="mask rgba-black-light flex-center">
+        <div class="container text-center white-text">
+          <div class="white-text text-center wow fadeInUp">
+            <h1>Room Booking System</h1>
+            <h4>Room Booking System is to manage all the  information.</h4>
+            <br>
+            <div class="container white-text">
+                <a href="add_customer">
+                  <button class="btn btn-primary btn-circle btn-xl" >Book Room</button>
+                </a>
+              </div>
+              <br><br>
+              <div class="container white-text">
+                <a href="add_room">
+                  <button class="btn btn-primary btn-circle" >Add Room</button>
+                </a>
+                <a href="display_customer">
+                  <button class="btn btn-primary btn-circle" >All Customer</button>
+                </a>
+                <a href="display_rooms">
+                  <button class="btn btn-primary btn-circle" >All Rooms</button>
+                </a>
+                <a href="display_booking">
+                  <button class="btn btn-primary btn-circle" >All Booking</button>
+                </a>
+                <a href="display_payment">
+                  <button class="btn btn-primary btn-circle" >All Payment</button>
+                </a>
+                <a href="summary">
+                  <button class="btn btn-primary btn-circle" >Data Summary</button>
+                </a>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  {% endblock %}
